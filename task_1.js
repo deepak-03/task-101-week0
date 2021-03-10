@@ -1,20 +1,35 @@
-let p1 = fetch("./task_1.json");
-// console.log(p1);
-p1
-  .then(function(resp) {
-    return resp.json();
-  })
-  .then(data => buildPage(data));
+fetch("./task_1.json")
+  .then(resp => resp.json())
+  .then(buildPage);
+
+// FOLLOW BUTTON
+
+let followed = false;
+
+let followButton = document.getElementById("followButton");
+followButton.onclick = () => {
+  let followCountDiv = document.getElementById("numberOfFollowers");
+  followButton.classList.toggle("followed");
+  followButton.value = followed?"Follow": "Unfollow";
+  followCountDiv.innerText = parseInt(followCountDiv.innerText) + (followed?-1:1);
+  followed = !followed;
+}
+
+// ACCOUNT PIC
 
 function buildAccountPic(accountPic){
   let accountPicture = document.getElementById("accountPic");
   accountPicture.src = accountPic.url;
 }
 
+//PROFILE PIC
+
 function buildProfilePic(profilePic) {
   let imgElement = document.getElementById("profileImage");
   imgElement.src = profilePic.url;
 }
+
+//PROFILE DATA
 
 function buidProfileData(profileData){
   let profName = document.getElementById("profileName");
