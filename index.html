@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="task_1.css">
-    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>          
+    <script type="text/javascript" src="task_1.js"></script>
   </head>
 
   <body>
@@ -25,11 +26,11 @@
             </div>
 
             <div class="icons">
-              <div><a href="#"><i class="fas fa-home"></i></a></div>
+              <div><a href="# "><i class="fas fa-home"></i></a></div>
               <div><a href="#"><i class="fas fa-envelope"></i></a></div>
               <div><a href="#"><i class="far fa-compass"></i></a></div>
               <div><a href="#"><i class="far fa-heart"></i></a></div>
-              <div><a href="#"><img src="https://media-exp1.licdn.com/dms/image/C560BAQGB0W6_ixPclA/company-logo_200_200/0/1547049504116?e=2159024400&v=beta&t=mVUK4jxzHuRq2mTkGbPfWXBcBGXzQrcGOlEPRZ-V4II" id="icons_profPic"></a></div>
+              <div><a href="#"><img id="accountPic"></a></div>
             </div>
         </div>
 
@@ -41,15 +42,15 @@
 
             <div class="profilePicContainer">
               <div class="profilePic">
-               <img  src="https://media-exp1.licdn.com/dms/image/C560BAQGB0W6_ixPclA/company-logo_200_200/0/1547049504116?e=2159024400&v=beta&t=mVUK4jxzHuRq2mTkGbPfWXBcBGXzQrcGOlEPRZ-V4II" alt="" >
+               <img id="profileImage" alt="" >
               </div>
             </div>
 
             <div class="staticText">
               <div class="row_1">
-                <h2>tekionCorp</h2>
+                <h2 id="profileName"></h2>
                 <div class="buttons">
-                  <div class="button_1">  <input type="button" class="btn_1" value="Follow"></div>
+                  <div class="button_1">  <input type="button" class="followButton" value="Follow"></div>
                   <div class="button_2"><i class="fas fa-caret-down" ></i></div>
                 </div>
                 <div class="button_3"><i class="fas fa-ellipsis-h"></i></div>
@@ -57,9 +58,9 @@
 
 
               <div class="row_2">
-                <div> <b>37</b> posts </div>
-                <div> <b>407</b> followers </div>
-                <div> <b>87</b> following </div>
+                <div> <b id="numberOfPosts"></b> posts </div>
+                <div> <b id="numberOfFollowers"></b> followers </div>
+                <div> <b id="numberOfFollowing"></b> following </div>
               </div>
 
               <div class="row_3">
@@ -71,13 +72,15 @@
             </div>
           </div>
 
-            <table class="images">
+            <div class="images">
               
-              <tbody id="myImages">
+              <div id="imagesContainer">
 
-              </tbody>
+                
+                
+              </div>
 
-            </table>
+            </div>
 
 <!--           <table class="images"> -->
             <!-- <tr>
@@ -114,7 +117,7 @@
         </div>
       </div>
      
-      <script type="text/javascript" src="task_1.js"></script>
+      
     
   </body>
 
