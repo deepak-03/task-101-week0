@@ -7,7 +7,7 @@ fetch("./task_1.json")
 let followed = false;
 
 let followButton = document.getElementById("followButton");
-followButton.onclick = () => {
+  followButton.onclick = () => {
   let followCountDiv = document.getElementById("numberOfFollowers");
   followButton.classList.toggle("followed");
   followButton.value = followed?"Follow": "Unfollow";
