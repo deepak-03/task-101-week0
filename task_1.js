@@ -45,15 +45,57 @@ function buidProfileData(profileData){
   numberOfFollowing.innerText = profileData.following;
 }
 
-// POSTING IMAGES
+// POSTING IMAGES 
 
 function buildPosts(postsArray) {
   const imageContainer = document.getElementById("imagesContainer");
   postsArray.forEach(({id, imgLink, likes, comments}) => {
+    
+    let divContainer = document.createElement("div");
+    divContainer.classList.add("imagePost");
+
     let img = document.createElement("img");
     img.src = imgLink;
     img.classList.add("images");
-    imageContainer.appendChild(img);
+    
+    let likeCommentDiv = document.createElement("div");
+    likeCommentDiv.classList.add("likeComment");
+
+    let likeButton = document.createElement("button");
+    likeButton.classList.add("likeCommentButton");
+    let commentButton = document.createElement("button");
+    commentButton.classList.add("likeCommentButton");
+
+    let likeIcon = document.createElement("i");
+    let commentIcon = document.createElement("i");
+
+    likeIcon.classList.add("fas");
+    likeIcon.classList.add("fa-heart");
+    likeIcon.classList.add("onHoverIcon");
+    commentIcon.classList.add("fas");
+    commentIcon.classList.add("fa-comment");
+    commentIcon.classList.add("onHoverIcon");
+
+    let numberOfLikes = document.createElement("div");
+    let numberOfComments = document.createElement("div");
+
+    numberOfLikes.innerText = likes;
+    numberOfComments.innerText = comments;
+
+    likeButton.appendChild(likeIcon);
+    likeButton.appendChild(numberOfLikes);
+
+    commentButton.appendChild(commentIcon);
+    commentButton.appendChild(numberOfComments);
+
+    likeCommentDiv.appendChild(likeButton);
+    likeCommentDiv.appendChild(commentButton);
+
+    divContainer.appendChild(img);
+    divContainer.appendChild(likeCommentDiv);
+
+    imageContainer.appendChild(divContainer);
+
   });
 }       
 
