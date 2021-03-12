@@ -1,3 +1,5 @@
+
+
 fetch("./task_1.json")
   .then(resp => resp.json())
   .then(buildPage);
@@ -51,23 +53,25 @@ function buildPosts(postsArray) {
   const imageContainer = document.getElementById("imagesContainer");
   postsArray.forEach(({id, imgLink, likes, comments}) => {
     
-    let divContainer = document.createElement("div");
+    // Creating a div container for image and icons
+    const divContainer = document.createElement("div");
     divContainer.classList.add("imagePost");
 
-    let img = document.createElement("img");
+    const img = document.createElement("img");
     img.src = imgLink;
     img.classList.add("images");
     
-    let likeCommentDiv = document.createElement("div");
+    // Creating a div container for buttons(icons and numbers)
+    const likeCommentDiv = document.createElement("div");
     likeCommentDiv.classList.add("likeComment");
 
-    let likeButton = document.createElement("button");
+    const likeButton = document.createElement("button");
     likeButton.classList.add("likeCommentButton");
-    let commentButton = document.createElement("button");
+    const commentButton = document.createElement("button");
     commentButton.classList.add("likeCommentButton");
 
-    let likeIcon = document.createElement("i");
-    let commentIcon = document.createElement("i");
+    const likeIcon = document.createElement("i");
+    const commentIcon = document.createElement("i");
 
     likeIcon.classList.add("fas");
     likeIcon.classList.add("fa-heart");
@@ -76,10 +80,15 @@ function buildPosts(postsArray) {
     commentIcon.classList.add("fa-comment");
     commentIcon.classList.add("onHoverIcon");
 
-    let numberOfLikes = document.createElement("div");
-    let numberOfComments = document.createElement("div");
+    likeIcon.id = "ICON" + id;
+    // console.log(likeIcon.id);
+
+    const numberOfLikes = document.createElement("div");
+    const numberOfComments = document.createElement("div");
 
     numberOfLikes.innerText = likes;
+    numberOfLikes.id = "LIKES" + id;
+    // console.log(numberOfLikes.id);
     numberOfComments.innerText = comments;
 
     likeButton.appendChild(likeIcon);
@@ -96,10 +105,44 @@ function buildPosts(postsArray) {
 
     imageContainer.appendChild(divContainer);
 
-  });
-}       
 
+ // LIKE ICON TOGGLING
+
+  let liked = false;
+    let likeI = document.getElementById("likeIcon");
+    likeButton.onclick = () => {
+    // console.log(5);
+    // let likeCountDiv = document.getElementById("numberOfLikes");
+    // console.log(5);
+    likeIcon.classList.toggle("UnLikedIcon");
+    // console.log(likeIcon.classList);
+    // likeCountDiv.innerText = parseInt(likeCountDiv.innerText) + (liked?-1:1);
+    // liked = !liked;
     
+                                }
+  })
+}  
+
+// IMPLEMENTING 2 TABS
+
+function onTabClick(event){
+  let activeTabs = document.querySelectorAll(".active");
+
+  // console.log(activeTabs.length);
+
+  for(var i=0; i<activeTabs.length; i++){
+    activeTabs[i].className =  activeTabs[i].className.replace("active","");
+  }
+
+  event.target.parentElement.className += " active";
+  // console.log(document.getElementById(event.target.href.split('#')[1]).className);  
+  document.getElementById(event.target.href.split('#')[1]).className += ' active';
+}
+
+const ele = document.getElementById("menuContainer");
+
+ele.addEventListener('click', onTabClick, false);
+
 
 function buildPage({accountPic, profilePic, profileData, igtv, posts}) {
   buildProfilePic(profilePic);
