@@ -13,12 +13,14 @@
   },
   "igtv" : [
     {
-      "vidLink" : "",
+      "id": 1,
+      "vidLink" : "https://www.metacafe.com/watch/12178660/a-dangerous-form-of-couple-dance/",
       "likes" : 135 ,
       "comments": 25
     },
     {
-      "vidLink" : "",
+      "id": 2,
+      "vidLink" : "https://www.youtube.com/watch?v=VNs_cCtdbPc",
       "likes" : 455,
       "comments": 20
     }
