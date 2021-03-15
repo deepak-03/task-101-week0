@@ -131,9 +131,12 @@ function buildVideos(postsArray) {
     vidContainer.classList.add("imagePost");
 
     const vid = document.createElement("video");
-    vid.src = vidLink;
     vid.controls = true;
     vid.classList.add("images");
+
+    const source = document.createElement("source");
+    source.src = vidLink;
+    vid.appendChild(source);
     
     // Creating a div container for buttons(icons and numbers)
     const likeCommentDiv = document.createElement("div");
