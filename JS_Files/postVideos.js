@@ -21,32 +21,16 @@ function buildVideos(postsArray) {
       // Creating a div container for buttons(icons and numbers)
       const likeCommentDiv = document.createElement("div");
       likeCommentDiv.classList.add("likeComment");
-  
+    
       const likeButton = document.createElement("button");
       likeButton.classList.add("likeCommentButton");
       const commentButton = document.createElement("button");
       commentButton.classList.add("likeCommentButton");
-  
-      const likeIcon = document.createElement("i");
-      const commentIcon = document.createElement("i");
-  
-      likeIcon.classList.add("fas");
-      likeIcon.classList.add("fa-heart");
-      likeIcon.classList.add("onHoverIcon");
-      commentIcon.classList.add("fas");
-      commentIcon.classList.add("fa-comment");
-      commentIcon.classList.add("onHoverIcon");
-  
-      likeIcon.id = "ICON" + id;
-      // console.log(likeIcon.id);
-  
-      const numberOfLikes = document.createElement("div");
-      const numberOfComments = document.createElement("div");
-  
-      numberOfLikes.innerText = likes;
-      numberOfLikes.id = "LIKES" + id;
-      // console.log(numberOfLikes.id);
-      numberOfComments.innerText = comments;
+
+      const likeIcon = createLikeIcon();
+      const commentIcon = createCommentIcon();
+      const numberOfLikes = createLikeNumber(likes);
+      const numberOfComments = createCommentNumber(comments);
   
       likeButton.appendChild(likeIcon);
       likeButton.appendChild(numberOfLikes);
@@ -61,11 +45,10 @@ function buildVideos(postsArray) {
       vidContainer.appendChild(likeCommentDiv);
   
       videoContainer.appendChild(vidContainer);
-  
-  
+      
     })
   }
 
 function buildPage({igtv}) {
-    buildVideos(igtv);
+  buildVideos(igtv);
 }
