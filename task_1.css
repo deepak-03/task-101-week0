@@ -278,12 +278,12 @@ nav {
   width: 100%;
 }
 
-.likeCommentButton #LikeIcon{
-  /* color: white; */
-  font-size: 20px;;
-}
+/* .likeCommentButton #LikeIcon{
+  color: red;
+  font-size: 20px;
+} */
 
- .UnLikedIcon{
+ .unlikedIcon{
   color: red;
 }
 
