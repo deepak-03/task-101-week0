@@ -1,7 +1,7 @@
 import {profileModel} from "./../models/profileModel.js";
 import {profileView} from "./../views/profileView.js";
 
-let profileControl ={
+const profileControl ={
 
     init : function(){
         profileView.init();
@@ -13,15 +13,13 @@ let profileControl ={
 
     followButtonClicked: function(){
         
-        let Followed = profileModel.followers();
+        const Followed = profileModel.followers();
         profileView.followButtonToggle(Followed);
 
-        let Followers = profileModel.followersOnClick();
+        const Followers = profileModel.followersOnClick();
         profileView.followersUpdate(Followers);
 
     }
-
-
 }
 
 export {profileControl};

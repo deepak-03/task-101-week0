@@ -1,4 +1,4 @@
-import {elementID} from "./../registry.js";
+import {elementID} from "../DOM_IDS.js";
 import {profileControl} from "./../controllers/profileControl.js";
 
 let profileView = {
@@ -37,7 +37,6 @@ let profileView = {
         elementID.followButton.value = "Unfollow";
         else
         elementID.followButton.value = "Follow";
-        
     },
 
     followersUpdate: function(followers){

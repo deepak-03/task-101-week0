@@ -1,5 +1,5 @@
 
-let profileModel = {
+const profileModel = {
 
     followers: function(){
 
