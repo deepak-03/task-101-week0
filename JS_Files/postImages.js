@@ -18,6 +18,7 @@ function buildPosts(postsArray) {
 
     const likeButton = document.createElement("button");
     likeButton.classList.add("likeCommentButton");
+    
     const commentButton = document.createElement("button");
     commentButton.classList.add("likeCommentButton");
     
@@ -29,6 +30,16 @@ function buildPosts(postsArray) {
     const commentIcon = createCommentIcon();
     const numberOfLikes = createLikeNumber(likes);
     const numberOfComments = createCommentNumber(comments);
+
+    // likeIcon.id = id1;
+    // likeIcon.style.color = "red";
+
+    // let icon = document.getElementById("i");
+    // console.log(icon);
+    // likeButton.addEventListener('click', ()=>{
+    //   // console.log(likeIcon);
+    //   likeIcon.style.color = "white";
+    // });
 
     likeButton.appendChild(likeIcon);
     likeButton.appendChild(numberOfLikes);

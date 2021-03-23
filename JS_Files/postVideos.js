@@ -24,6 +24,7 @@ function buildVideos(postsArray) {
     
       const likeButton = document.createElement("button");
       likeButton.classList.add("likeCommentButton");
+      
       const commentButton = document.createElement("button");
       commentButton.classList.add("likeCommentButton");
 
