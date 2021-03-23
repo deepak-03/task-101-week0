@@ -1,5 +1,5 @@
-import {profileControl} from "./controllers/profileControl.js";
-import {profileModel} from "./models/profileModel.js";
+import {profileControl} from "./profile_mvc/profileControl.js";
+import {profileModel} from "./profile_mvc/profileModel.js";
 
 fetch("./task_1.json")
     .then(resp => resp.json())

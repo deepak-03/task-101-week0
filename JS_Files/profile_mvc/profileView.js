@@ -1,5 +1,5 @@
 import {elementID} from "../DOM_IDS.js";
-import {profileControl} from "./../controllers/profileControl.js";
+import {profileControl} from "./profileControl.js";
 
 let profileView = {
     init: function(){

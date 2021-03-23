@@ -1,5 +1,5 @@
-import {profileModel} from "./../models/profileModel.js";
-import {profileView} from "./../views/profileView.js";
+import {profileModel} from "./profileModel.js";
+import {profileView} from "./profileView.js";
 
 const profileControl ={
 
