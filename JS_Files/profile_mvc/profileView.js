@@ -1,13 +1,13 @@
-import {elementID} from "../DOM_IDS.js";
+import {elementID} from "../profileDOM_IDS.js";
 import {profileControl} from "./profileControl.js";
 
 let profileView = {
     init: function(){
-        this.data = profileControl.getProfileData();
         this.render();
     },
 
     render: function(){
+        this.data = profileControl.getProfileData();
         elementID.accountPicture.src = this.data.accountPicUrl;
         elementID.imgElement.src = this.data.profilePicUrl;
         elementID.profName.innerText = this.data.name;
@@ -28,7 +28,6 @@ let profileView = {
             <p>${this.data.externalLink}</p>
             </a></p>
         `;
-
     },
 
     followButtonToggle : function(Followed){
