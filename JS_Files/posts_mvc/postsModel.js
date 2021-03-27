@@ -1,0 +1,5 @@
+const postsModel = {
+    
+}
+
+export {postsModel};
